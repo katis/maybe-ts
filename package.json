@@ -1,12 +1,42 @@
 {
   "name": "@katis/maybe",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Library for handling possibly undefined values",
-  "main": "dist/index.js",
+  "main": "./dist/index.umd.js",
+  "module": "./dist/index.esm.js",
+  "sideEffects": false,
+  "types": "./dist/index.d.ts",
   "repository": "https://github.com/katis/maybe-ts",
   "author": "Joni Katajamäki",
   "license": "MIT",
+  "scripts": {
+    "prepublish": "yarn build",
+    "build": "yarn build:umd && yarn build:esm && yarn types",
+    "build:umd": "rollup -c rollup.config.js --file dist/index.umd.js --format umd -n Maybe",
+    "build:esm": "rollup -c rollup.config.js --file dist/index.esm.js --format esm",
+    "types": "tsc --emitDeclarationOnly --declaration --outDir dist ./src/index.ts",
+    "test:watch": "jest --watch"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
+  },
   "devDependencies": {
+    "@types/jest": "^23.3.2",
+    "jest": "^23.6.0",
+    "rollup": "^0.65.2",
+    "rollup-plugin-typescript": "^0.8.1",
+    "ts-jest": "^23.1.4",
     "typescript": "^3.0.3"
   }
 }

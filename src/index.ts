@@ -9,6 +9,9 @@ export const filter = <A>(
 ): A | undefined =>
   maybe === undefined || !predicate(maybe) ? undefined : maybe
 
+export const fromNullable = <A>(nullable: A | null): A | undefined =>
+  nullable === null ? undefined : nullable
+
 export const asNullable = <A>(maybe: A | undefined): A | null =>
   maybe === undefined ? null : maybe
 
@@ -28,5 +31,5 @@ export const getOrElse = <A>(maybe: A | undefined, makeDefault: () => A): A =>
 export const isDefined = <A>(maybe: A | undefined): maybe is A =>
   maybe !== undefined
 
-export const isUndefined = <A>(maybe: A | undefined): maybe is undefined =>
+export const notDefined = <A>(maybe: A | undefined): maybe is undefined =>
   maybe === undefined
