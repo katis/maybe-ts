@@ -1,0 +1,12 @@
+{
+  "name": "@katis/maybe",
+  "version": "0.1.0",
+  "description": "Library for handling possibly undefined values",
+  "main": "dist/index.js",
+  "repository": "https://github.com/katis/maybe-ts",
+  "author": "Joni Katajamäki",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^3.0.3"
+  }
+}
