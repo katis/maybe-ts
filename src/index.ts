@@ -3,11 +3,15 @@ export const map = <A, B>(
   mapFn: (value: A) => B
 ): B | undefined => (maybe === undefined ? undefined : mapFn(maybe))
 
+export const mapDefined = map
+
 export const filter = <A>(
   maybe: A | undefined,
   predicate: (value: A) => boolean
 ): A | undefined =>
   maybe === undefined || !predicate(maybe) ? undefined : maybe
+
+export const filterDefined = filter
 
 export const fromNullable = <A>(nullable: A | null): A | undefined =>
   nullable === null ? undefined : nullable
