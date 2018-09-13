@@ -35,7 +35,7 @@ if (Maybe.isDefined(undefined)) {
   // ...
 }
 
-// isUndefined
+// notDefined
 if (Maybe.notDefined(undefined)) {
   // ...
 }
