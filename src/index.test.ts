@@ -1,7 +1,7 @@
 import {
   map,
   filter,
-  asNullable,
+  orNull,
   getOrThrow,
   getOrDefault,
   getOrElse,
@@ -52,17 +52,17 @@ describe('fromNullable', () => {
   })
 })
 
-describe('asNullable', () => {
+describe('orNull', () => {
   it('should return null when value is undefined', () => {
-    expect(asNullable(undefined)).toEqual(null)
+    expect(orNull(undefined)).toEqual(null)
   })
 
   it('should return value when it is defined', () => {
-    expect(asNullable('string')).toEqual('string')
+    expect(orNull('string')).toEqual('string')
   })
 
   it('should return null when value is null', () => {
-    expect(asNullable(null)).toEqual(null)
+    expect(orNull(null)).toEqual(null)
   })
 })
 

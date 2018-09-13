@@ -15,8 +15,8 @@ const length: number | undefined = Maybe.map(value, s => s.length)
 // filter (or its alias filterDefined)
 const shortString: string | undefined = Maybe.filter(value, s => s.length <= 3)
 
-// asNullable
-const nullable: string | null = Maybe.asNullable('nullable')
+// orNull
+const nullable: string | null = Maybe.orNull('nullable')
 
 // fromNullable
 const undefinedString: string | undefined = Maybe.fromNullable(nullable)

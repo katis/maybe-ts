@@ -16,7 +16,7 @@ export const filterDefined = filter
 export const fromNullable = <A>(nullable: A | null): A | undefined =>
   nullable === null ? undefined : nullable
 
-export const asNullable = <A>(maybe: A | undefined): A | null =>
+export const orNull = <A>(maybe: A | undefined): A | null =>
   maybe === undefined ? null : maybe
 
 export const getOrThrow = <A>(maybe: A | undefined): A => {
