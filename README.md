@@ -9,10 +9,10 @@ import * as Maybe from '@katis/maybe'
 
 const value: string | undefined = 'defined'
 
-// map
+// map (or its alias mapDefined)
 const length: number | undefined = Maybe.map(value, s => s.length)
 
-// filter
+// filter (or its alias filterDefined)
 const shortString: string | undefined = Maybe.filter(value, s => s.length <= 3)
 
 // asNullable
